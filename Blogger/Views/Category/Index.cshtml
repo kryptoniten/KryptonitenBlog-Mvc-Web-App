@@ -1,0 +1,83 @@
+﻿@model IEnumerable<KryptonitenBlog.Entities.Category>
+
+@{
+    ViewBag.Title = "Index";
+}<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+
+                <a href="/Category/Create" class="btn btn-primary">
+                    Create New
+
+                </a>
+            </p>
+
+
+
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreateadOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ModifiedOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ModifierUserName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreateadOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ModifiedOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ModifierUserName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $(function () {
+        $("footer").hide();
+
+    });
+
+
+</script>

@@ -1,0 +1,74 @@
+﻿@using KryptonitenBlog.Entities
+@model BlogUser
+@{
+    ViewBag.Title = "Kullanıcı Profili";
+}
+
+<div class="container">
+    <div class="row">
+        
+      
+        <hr />
+    </div>
+    <div class="row">
+
+        <div class="col-md-2">
+            <img src="~/Images/@Model.ProfileImageName" class="img-circle" width="128" height="128" />
+
+        </div>
+        <div class="col-md-8">
+            <h3>@(Model.Name + " " + Model.Surname)</h3>
+            <br />
+            <h5><b>@Html.DisplayNameFor(model => model.Username):</b>@Model.Username</h5>
+            <h5><b>@Html.DisplayNameFor(model => model.Email):</b>@Model.Email</h5>
+            <br />
+            <h6> <a href="#">More...</a>   </h6>
+        </div>
+
+
+        <div class="col-md-2 text-right">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                    <span class="fas fa-cog">&nbsp;</span>
+                    Ayarlar
+                    
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="@Url.Action("EditProfile")">
+                            <span class="fas fa-edit">^&nbsp;</span>
+                            Düzenle
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("DeleteProfile")" onclick="return confirm('Hesabı silmek istediğinize emin misiniz?')">
+                            <span class="fas fa-trash">^&nbsp;</span>
+                            Sil
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<script>
+    $(function () {
+        $("footer").hide();
+
+    });
+
+
+</script>
+

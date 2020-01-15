@@ -1,0 +1,68 @@
+﻿@using KryptonitenBlog.Entities.ValueObjects
+@model LoginViewModel
+@{
+    ViewBag.Title = "Kryptoniten Blog Giriş Sayfası";
+
+
+}
+    <link href="~/Content/validation-summary.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <body id="LoginForm">
+        <div class="container"> 
+            <h1 class="form-heading">Giriş</h1>
+           
+
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <h2>Lütfen Giriş Yapınız..</h2>
+                        <p>E-Mail Adresinizi ve Şifrenizi Giriniz </p>
+                        @Html.ValidationSummary(false)
+                       
+                        @*@if(ViewBag.SetLink !=null)
+                        {
+                            <br />
+                            <a href="@ViewBag.SetLink" class="btn btn-primary">Activate</a>
+                            <br />
+                            
+                        }*@
+                        
+                    </div>
+                    <br />
+                    <form id="Login">
+
+                        <div class="form-group">
+
+                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullancı Adınız.." })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifreniz...",type="password" })
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Giriş</button>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+
+}
+
+<link href="~/Content/Login-Register.css" rel="stylesheet" />
+<script>
+    $(function () {
+        $("footer").hide();
+
+    });
+
+
+</script>
+

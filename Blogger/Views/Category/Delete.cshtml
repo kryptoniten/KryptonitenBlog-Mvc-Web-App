@@ -1,0 +1,75 @@
+﻿@model KryptonitenBlog.Entities.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container">
+    
+    <br /><br />
+    <h3>Silmek İstediğinizden Emin Misiniz?</h3>
+    <div>
+        
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateadOn)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreateadOn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedOn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifierUserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifierUserName)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                @Html.ActionLink("Back to List", "Index", "Category", null, new { @class = "btn btn-primary" })
+
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+        $("footer").hide();
+
+    });
+
+
+</script>

@@ -1,0 +1,74 @@
+﻿@model KryptonitenBlog.Entities.Note
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Yazının Detayları</h2>
+
+<div class="container">
+    <div>
+       
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsDraft)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsDraft)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LikeCount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LikeCount)
+            </dd>
+
+      
+            
+
+         
+
+        </dl>
+    </div>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) 
+    @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn btn-danger" })
+
+
+</div>
+
+<script>
+    $(function () {
+        $("footer").hide();
+
+    });
+
+
+</script>

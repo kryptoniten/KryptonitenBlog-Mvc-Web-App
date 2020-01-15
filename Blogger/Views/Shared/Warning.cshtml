@@ -1,0 +1,63 @@
+﻿@using Blogger.ViewModels;
+@model  WarninViewModel
+
+
+@{
+    ViewBag.Title = Model.Title;
+}
+<link href="~/Content/Login-Register.css" rel="stylesheet" />
+
+<body id="LoginForm">
+    <div class="container">
+        <h1 class="form-heading">Giriş</h1>
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>@Model.Header</h2>
+                    <p>@Model.Title</p>
+                    <hr />
+                    <p class="text-justify">
+                        @foreach (string msg in Model.Items)
+                        {
+
+                        <b>
+                            @msg<br>
+                        </b>
+                           
+                        }
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+}
+@{
+    string js = string.Empty;
+    if (Model.IsRedicting)
+    {
+        js = "setTimeout(function () { window.location = '" + Model.RedirecingtUrl + "'; }," + Model.RedirectingTimeout + " );";
+    }
+}
+
+<script>
+    $(function () {
+        $("footer").hide();
+
+        @Html.Raw(js);
+
+    });
+
+
+</script>
+
+
+
+

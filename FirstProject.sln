@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger", "Blogger\Blogger.csproj", "{4DC307AA-C9DE-4F07-841D-F6EAF736F495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptonitenBlog.BusinessLayer", "KryptonitenBlog.BusinessLayer\KryptonitenBlog.BusinessLayer.csproj", "{9E840F8C-AA3D-4464-B41F-254ECDFD809F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptonitenBlog.DataAccessLayer", "KryptonitenBlog.DataAccessLayer\KryptonitenBlog.DataAccessLayer.csproj", "{FF57A887-A7C1-49C0-A214-9F4A104EFCA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptonitenBlog.Entities", "KryptonitenBlog.Entities\KryptonitenBlog.Entities.csproj", "{DAB80C8D-AD46-4836-A593-B8F58FF72E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptonitenBlog.Common", "KryptonitenBlog.Common\KryptonitenBlog.Common.csproj", "{F2581759-D5FC-48B4-9E92-CB199E517EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptonitenBlog.Core", "KryptonitenBlog.Core\KryptonitenBlog.Core.csproj", "{8B1CE903-D0D2-4EEE-BA49-D41931D274F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC307AA-C9DE-4F07-841D-F6EAF736F495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC307AA-C9DE-4F07-841D-F6EAF736F495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC307AA-C9DE-4F07-841D-F6EAF736F495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC307AA-C9DE-4F07-841D-F6EAF736F495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E840F8C-AA3D-4464-B41F-254ECDFD809F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E840F8C-AA3D-4464-B41F-254ECDFD809F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E840F8C-AA3D-4464-B41F-254ECDFD809F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E840F8C-AA3D-4464-B41F-254ECDFD809F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF57A887-A7C1-49C0-A214-9F4A104EFCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF57A887-A7C1-49C0-A214-9F4A104EFCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF57A887-A7C1-49C0-A214-9F4A104EFCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF57A887-A7C1-49C0-A214-9F4A104EFCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB80C8D-AD46-4836-A593-B8F58FF72E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB80C8D-AD46-4836-A593-B8F58FF72E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB80C8D-AD46-4836-A593-B8F58FF72E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB80C8D-AD46-4836-A593-B8F58FF72E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2581759-D5FC-48B4-9E92-CB199E517EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2581759-D5FC-48B4-9E92-CB199E517EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2581759-D5FC-48B4-9E92-CB199E517EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2581759-D5FC-48B4-9E92-CB199E517EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1CE903-D0D2-4EEE-BA49-D41931D274F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1CE903-D0D2-4EEE-BA49-D41931D274F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1CE903-D0D2-4EEE-BA49-D41931D274F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1CE903-D0D2-4EEE-BA49-D41931D274F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41868057-48CE-4E5A-989B-5B89483B7E8B}
+	EndGlobalSection
+EndGlobal
