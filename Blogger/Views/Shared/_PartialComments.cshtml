@@ -1,0 +1,60 @@
+﻿@using KryptonitenBlog.Entities;
+@using Blogger.Models;
+
+@model List<Comment>
+
+@{ 
+    BlogUser user = SessionManager.User;
+}
+
+@foreach (Comment item in Model)
+{
+
+    <div class="media">
+
+
+
+        <div class="media-body">
+
+            <span class="col-md-10 text-center">
+                @item.Text
+
+            </span>
+
+            <br /><br />
+            @if (user != null && user.Id == item.Owner.Id)
+            {
+                <span class="col-md-2">
+                    <button type="button" class="btn btn-warning btn-sm">
+                        <span class="fas fa-edit"></span>
+                    </button>
+
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <span class="fas fa-trash"></span>
+                    </button>
+                </span>
+            }
+            <br />
+
+
+            &nbsp;&nbsp;
+
+
+            <small class="col-md-12 text-right">
+                <span class="fas fa-clock"></span> @item.ModifiedOn
+                <span class="fas fa-user"></span>@item.Owner.Username
+            </small>
+
+
+
+
+        </div>
+
+
+    </div>
+
+}
+
+
+
+

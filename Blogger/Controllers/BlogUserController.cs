@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using KryptonitenBlog.BusinessLayer;
+﻿using KryptonitenBlog.BusinessLayer;
 using KryptonitenBlog.BusinessLayer.Results;
 using KryptonitenBlog.Entities;
+using System.Net;
+using System.Web.Mvc;
 
 namespace Blogger.Controllers
 {
@@ -44,18 +38,16 @@ namespace Blogger.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BlogUser blogUser)
         {
-
             ModelState.Remove("CreatedOn");
             ModelState.Remove("ModifiedOn");
             ModelState.Remove("ModifierUsername");
 
-
             if (ModelState.IsValid)
             {
                 BusinessLayerResult<BlogUser> res = BlogUserManager.Insert(blogUser);
-                if(res.Errors.Count > 0)
+                if (res.Errors.Count > 0)
                 {
-                    res.Errors.ForEach(x => ModelState.AddModelError("",x.Message));
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(blogUser);
                 }
 
@@ -65,7 +57,6 @@ namespace Blogger.Controllers
             return View(blogUser);
         }
 
-       
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,7 +71,6 @@ namespace Blogger.Controllers
             return View(blogUser);
         }
 
-        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(BlogUser blogUser)
@@ -91,20 +81,18 @@ namespace Blogger.Controllers
 
             if (ModelState.IsValid)
             {
-                BusinessLayerResult<BlogUser> res = BlogUserManager.Update(blogUser); 
-                if(res.Errors.Count > 0)
+                BusinessLayerResult<BlogUser> res = BlogUserManager.Update(blogUser);
+                if (res.Errors.Count > 0)
                 {
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(blogUser);
                 }
 
-                
                 return RedirectToAction("Index");
             }
             return View(blogUser);
         }
 
-        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,19 +107,14 @@ namespace Blogger.Controllers
             return View(blogUser);
         }
 
-        
-
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             BlogUser blogUser = BlogUserManager.Find(x => x.Id == id);
-           BlogUserManager.Delete(blogUser);
+            BlogUserManager.Delete(blogUser);
             BlogUserManager.Save();
             return RedirectToAction("Index");
         }
-
-      
     }
 }

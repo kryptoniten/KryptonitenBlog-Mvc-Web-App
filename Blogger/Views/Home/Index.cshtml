@@ -74,13 +74,14 @@
                         </h6>
 
                         <div class="card-footer">
-                            <button class="btn btn-default">
+                            <button class="btn btn-link">
 
-                                <span class="fa fa-heart"></span>&nbsp;Beğen
+                                <span class="fa fa-heart"></span>&nbsp;Beğen 
 
                             </button>  
+                            
                             <span class="fa fa-star"></span>&nbsp;@note.LikeCount
-                            <button class="btn btn-default">
+                            <button class="btn btn-link" data-toggle="modal" data-target="#modal_comment" data-note-id="@note.Id">
 
                                 <span class="fa fa-comment"></span>&nbsp;Yorumlar
                             </button>
@@ -93,3 +94,29 @@
         </div>
     </div>
 </div>
+
+@BootStrap.ModalPopup(id:"modal_comment",title:"Yorumlar")
+
+<script>
+
+    $(function () {
+
+        $('#modal_comment').on('show.bs.modal', function (e) {
+
+
+            var btn = $(e.relatedTarget);
+            var noteid = btn.data("note-id");
+
+            $("#modal_comment_body").load("/Comment/ShowNoteComments/" + noteid);
+
+
+                })
+
+
+
+    });
+
+
+
+
+</script>
